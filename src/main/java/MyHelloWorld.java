@@ -15,9 +15,10 @@ public class MyHelloWorld {
         static String wieSpaet() {
             Calendar c = Calendar.getInstance();
             int hour = c.get(Calendar.HOUR_OF_DAY);
+            String hourf = String.format("%02d", hour);
             int minute = c.get(Calendar.MINUTE);
             String minutef = String.format("%02d", minute);
-            String jetzt = hour + ":" + minutef;
+            String jetzt = hourf + ":" + minutef;
             return(jetzt);
     }
         static void zeigeUhrzeit(String jetzt) {
