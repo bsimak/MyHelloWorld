@@ -5,7 +5,7 @@ public class MyHelloWorld {
         Scanner scan = new Scanner(System.in);
         System.out.println("Hello, what's your name?");
         String name = scan.next();
-        System.out.println("Hello " + name + ", still busy");
+        System.out.println("Hello " + name + ", still busy?");
         scan.close();
     }
 }
