@@ -19,9 +19,11 @@ public class MyHelloWorld {
 
         String jetzt = wieSpaet(eins);
         zeigeUhrzeit(jetzt);
+
         gehFragen(frage1);
         String myName = gibAntwort(nobody, dauer);
         gehAntworten(myName);
+
         jetzt = wieSpaet(zwei);
         zeigeUhrzeit(jetzt);
     }
@@ -34,8 +36,11 @@ public class MyHelloWorld {
                 String mm = String.format("%02d", minute);
                 return (hh + ":" + mm);
             }
+            if (variante == 2) {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
-                return(dtf.format(ZonedDateTime.now()));
+                return (dtf.format(ZonedDateTime.now()));
+            }
+                return ("heute keine Uhrzeit");
          }
         static void zeigeUhrzeit(String jetzt) {
             out.println("Jetzt ist es: " + jetzt );
