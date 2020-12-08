@@ -1,8 +1,8 @@
+package bsi.myhelloworld;
+
 import java.util.Calendar;
 import java.util.Scanner;
 import java.lang.Thread;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
 
 
