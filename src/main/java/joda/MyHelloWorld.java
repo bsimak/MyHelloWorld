@@ -1,13 +1,21 @@
 import java.util.Calendar;
 import java.util.Scanner;
 import java.lang.Thread;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
+
 
 public class MyHelloWorld {
     public static void main(String[] args) throws InterruptedException {
 
         String frage1 = "Hello, what's your name?";
         String nobody = "nobody";
-        int dauer = 10000;
+        int dauer = 1000;
+
+        // get current date and time
+        LocalTime dt = LocalTime.now();
+        System.out.println(dt);
 
         String jetzt = wieSpaet();
         zeigeUhrzeit(jetzt);
