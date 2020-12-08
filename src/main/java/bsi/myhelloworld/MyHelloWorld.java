@@ -1,43 +1,48 @@
 package bsi.myhelloworld;
 
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Scanner;
 import java.lang.Thread;
-import org.joda.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import static java.lang.System.out;
 
 
 public class MyHelloWorld {
     public static void main(String[] args) throws InterruptedException {
 
+        int eins = 1;
+        int zwei = 2;
         String frage1 = "Hello, what's your name?";
         String nobody = "nobody";
         int dauer = 1000;
 
-        // get current date and time
-        LocalTime dt = LocalTime.now();
-        System.out.println(dt);
-
-        String jetzt = wieSpaet();
+        String jetzt = wieSpaet(eins);
         zeigeUhrzeit(jetzt);
         gehFragen(frage1);
         String myName = gibAntwort(nobody, dauer);
         gehAntworten(myName);
+        jetzt = wieSpaet(zwei);
+        zeigeUhrzeit(jetzt);
     }
-        static String wieSpaet() {
-            Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            String hourf = String.format("%02d", hour);
-            int minute = c.get(Calendar.MINUTE);
-            String minutef = String.format("%02d", minute);
-            String uhrzeit = hourf + ":" + minutef;
-            return(uhrzeit);
-    }
+        static String wieSpaet(int variante) {
+            if (variante == 1)  {
+                Calendar c = Calendar.getInstance();
+                int hour = c.get(Calendar.HOUR_OF_DAY);
+                String hh = String.format("%02d", hour);
+                int minute = c.get(Calendar.MINUTE);
+                String mm = String.format("%02d", minute);
+                return (hh + ":" + mm);
+            }
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+                return(dtf.format(ZonedDateTime.now()));
+         }
         static void zeigeUhrzeit(String jetzt) {
-            System.out.println("Jetzt ist es: " + jetzt );
+            out.println("Jetzt ist es: " + jetzt );
         }
 
         static void gehFragen(String frage1) {
-            System.out.println(frage1);
+            out.println(frage1);
         }
         static String gibAntwort(String nobody, int dauer) throws InterruptedException {
             Scanner scan = new Scanner(System.in);
@@ -48,7 +53,7 @@ public class MyHelloWorld {
             return(name);
         }
         static void gehAntworten(String myName) {
-            System.out.println("Hello " + myName + ", still busy?");
+            out.println("Hello " + myName + ", still busy?");
         }
 }
 
