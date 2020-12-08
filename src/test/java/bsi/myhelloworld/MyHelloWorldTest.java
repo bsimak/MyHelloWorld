@@ -1,6 +1,8 @@
 package bsi.myhelloworld;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 
 class MyHelloWorldTest {
 
@@ -21,7 +23,10 @@ class MyHelloWorldTest {
 
     @org.junit.jupiter.api.Test
     void zeigeUhrzeit() {
+        //Test will pass
         System.out.println("Test zeigeUhrzeit");
+        int jetzt = 1;
+        Assertions.assertEquals(jetzt, 1);
     }
 
     @org.junit.jupiter.api.Test
