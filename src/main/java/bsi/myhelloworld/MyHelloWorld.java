@@ -29,8 +29,8 @@ public class MyHelloWorld {
             String hourf = String.format("%02d", hour);
             int minute = c.get(Calendar.MINUTE);
             String minutef = String.format("%02d", minute);
-            String jetzt = hourf + ":" + minutef;
-            return(jetzt);
+            String uhrzeit = hourf + ":" + minutef;
+            return(uhrzeit);
     }
         static void zeigeUhrzeit(String jetzt) {
             System.out.println("Jetzt ist es: " + jetzt );
